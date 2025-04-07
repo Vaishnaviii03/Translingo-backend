@@ -6,6 +6,8 @@ from tensorflow.keras.preprocessing.text import tokenizer_from_json
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
+import os
+
  # 💡 To allow requests from React frontend
 
 app = Flask(__name__)
