@@ -7,11 +7,10 @@ import numpy as np
 from flask_cors import CORS
 import os
 
-# 💡 To allow requests from React frontend
 app = Flask(__name__)
 
-# CORS configuration: Allow requests from specific frontend URL (update as needed)
-CORS(app, resources={r"/*": {"origins": "*"}})
+# Allow requests from localhost (for development) and your Netlify frontend (for production)
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://dashing-starship-f27d7a.netlify.app"]}})
 
 # Load model and tokenizers
 model = load_model('english_to_french_model.keras')
