@@ -45,6 +45,11 @@ def translate():
         return jsonify({'translation': french_translation})
     else:
         return jsonify({'translation':'No sentence provided'})
+    
+@app.route('/')
+def home():
+    return "Welcome to TransLingo API! Use /translate endpoint with POST request."
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
