@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransLingo - English to French Translator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Page Background */
+        body {
+            background-image: url('https://media.istockphoto.com/id/1304112070/photo/several-important-languages-on-paper-with-world-map-background.jpg?s=612x612&w=0&k=20&c=5DvPGS5VRjlrCFODKgFDHfOW91kDgSuQGG2mu0ui7jI=');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 100px;
+            max-width: 500px;
+        }
+
+        /* TransLingo Header Styling */
+        .translingo-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            background: linear-gradient(to right, #FF512F, #DD2476);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Form Label and Input Styling */
+        .form-label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FF512F;
+        }
+
+        .form-control {
+            border-radius: 50px;
+            border: 2px solid #FF512F;
+            box-shadow: 0 4px 10px rgba(255, 81, 47, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 15px rgba(255, 81, 47, 0.5);
+            border-color: #FF512F;
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            background: linear-gradient(to right, #FF512F, #DD2476);
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-weight: 700;
+            border: none;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #DD2476, #FF512F);
+            box-shadow: 0 8px 20px rgba(255, 81, 47, 0.6);
+            cursor: pointer;
+        }
+
+        /* Stylish French Translation Section */
+        .translated-text {
+            background: linear-gradient(to right, #FF512F, #DD2476);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .translated-text h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .translated-text p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="translingo-title">TransLingo</div>
+        <h2 class="text-center">English to French Translator</h2>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="english_sentence" class="form-label">Enter English Sentence:</label>
+                <input type="text" id="english_sentence" name="english_sentence" class="form-control" placeholder="Type your sentence here" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Translate</button>
+        </form>
+
+        {% if french_sentence %}
+        <div class="translated-text">
+            <h2 class="mt-4">French Translation:</h2>
+            <p>{{ french_sentence }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TransLingo. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
